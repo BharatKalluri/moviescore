@@ -15,6 +15,7 @@ type ImdbMovie struct {
 	Genre      string
 	Director   string
 	Actors     string
+	Plot       string
 	Awards     string
 	Poster     string
 	Metascore  string
@@ -35,6 +36,6 @@ func getJSON(url string, target interface{}) error {
 func GetImdbRatings(mname string) ImdbMovie {
 	movieName := strings.Replace(mname, " ", "+", 9)
 	movieInfo := new(ImdbMovie)
-	getJSON("http://www.omdbapi.com/?t="+movieName, movieInfo)
+	getJSON("http://www.omdbapi.com/?t="+movieName+"&plot=full", movieInfo)
 	return *movieInfo
 }

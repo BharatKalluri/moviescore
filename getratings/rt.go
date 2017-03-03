@@ -6,9 +6,13 @@ import (
 	"strings"
 )
 
-func RtScraper(mname string) string {
+func RtScraper(mname string, year string) string {
 	movieName := strings.Replace(mname, " ", "_", 9)
-	doc, err := goquery.NewDocument("https://www.rottentomatoes.com/m/" + movieName)
+	urlis := "https://www.rottentomatoes.com/m/" + movieName
+	if len(year) == 4 {
+		urlis = urlis + "_" + year
+	}
+	doc, err := goquery.NewDocument(urlis)
 	if err != nil {
 		fmt.Println("error occured")
 	}

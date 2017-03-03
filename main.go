@@ -15,22 +15,29 @@ func main() {
 	app.Usage = "A cli utility for showing Movie Ratings!"
 	app.UsageText = "MovieScore <Movie name here> (Please have quotes on either side if the movie name has spaces)"
 	app.Version = "0.1"
+	app.Flags = []cli.Flag{
+		cli.StringFlag{
+			Name:  "year, y",
+			Usage: "year of release, useful for rt ratings",
+		},
+	}
 	app.Action = func(c *cli.Context) error {
 		if len(c.Args()) > 1 {
 			fmt.Println("See the help by typing 'moviescore -h'")
+		} else if len(c.String("year")) == 4 {
+			PrettyPrinter(c.Args().Get(0), c.String("year"))
 		} else {
-			PrettyPrinter(c.Args().Get(0))
+			PrettyPrinter(c.Args().Get(0), "")
 		}
 		return nil
 	}
 	app.Run(os.Args)
 }
 
-func PrettyPrinter(MovieName string) {
-	RtRating := getratings.RtScraper(MovieName)
+func PrettyPrinter(MovieName string, year string) {
+	RtRating := getratings.RtScraper(MovieName, year)
 	ImdbRatings := getratings.GetImdbRatings(MovieName)
 	IntRtRatings, err := strconv.Atoi(RtRating)
-
 	fmt.Println(chalk.Cyan, `
 ------------------------------------------------------
   __  __            _         _____                    
@@ -55,9 +62,12 @@ func PrettyPrinter(MovieName string) {
 		fmt.Println(chalk.Magenta, "Poster: "+ImdbRatings.Poster)
 		fmt.Println(chalk.Magenta, "Metascore Rated: "+ImdbRatings.Metascore)
 		fmt.Println(chalk.Magenta, "Awards: "+ImdbRatings.Awards)
+		fmt.Println(chalk.Magenta, "Plot: "+ImdbRatings.Plot)
 		fmt.Println(" Ratings from IMDB and Rotten Tomatoes-")
 		fmt.Println(chalk.Magenta, chalk.Underline.TextStyle("IMDB Rating: "+ImdbRatings.ImdbRating))
-		if IntRtRatings > 60 && err == nil {
+		if IntRtRatings == -1 && err == nil {
+			fmt.Println(chalk.Red, "There seems to be a problem with rt, try with the year argument!")
+		} else if IntRtRatings > 60 && err == nil {
 			fmt.Println(chalk.Red, chalk.Underline.TextStyle("Rotten Tomatoes Rating: "+RtRating+"% (Certified Fresh!)"))
 		} else {
 			fmt.Println(chalk.Green, chalk.Underline.TextStyle("Rotten Tomatoes Rating: "+RtRating+"% (Rotten!)"))
