@@ -20,15 +20,27 @@ func main() {
 			Name:  "year, y",
 			Usage: "year of release, useful for rt ratings",
 		},
+		cli.StringFlag{
+			Name:  "reviews, r",
+			Usage: "Reviews, will be pulled from Rotten Tomatoes",
+		},
 	}
 	app.Action = func(c *cli.Context) error {
-		if len(c.Args()) > 1 {
+		if c.String("reviews") != "" {
+			AsciiPoster()
+			fmt.Println(chalk.Green, "Reviews from rt", chalk.Reset)
+			fmt.Println(chalk.Magenta, "-------------------", chalk.Reset)
+			getratings.RtReviewScraper(c.String("reviews"), c.String("year"))
+			return nil
+		} else if len(c.Args()) > 1 {
 			fmt.Println("See the help by typing 'moviescore -h'")
 		} else if len(c.String("year")) == 4 {
 			PrettyPrinter(c.Args().Get(0), c.String("year"))
 		} else {
 			PrettyPrinter(c.Args().Get(0), "")
 		}
+		fmt.Println(c.String("reviews"))
+		getratings.RtReviewScraper(c.String("reviews"), "")
 		return nil
 	}
 	app.Run(os.Args)
@@ -38,16 +50,7 @@ func PrettyPrinter(MovieName string, year string) {
 	RtRating := getratings.RtScraper(MovieName, year)
 	ImdbRatings := getratings.GetImdbRatings(MovieName)
 	IntRtRatings, err := strconv.Atoi(RtRating)
-	fmt.Println(chalk.Cyan, `
-------------------------------------------------------
-  __  __            _         _____                    
- |  \/  |          (_)       / ____|                   
- | \  / | _____   ___  ___  | (___   ___ ___  _ __ ___ 
- | |\/| |/ _ \ \ / / |/ _ \  \___ \ / __/ _ \| '__/ _ \
- | |  | | (_) \ V /| |  __/  ____) | (_| (_) | | |  __/
- |_|  |_|\___/ \_/ |_|\___| |_____/ \___\___/|_|  \___|
-------------------------------------------------------
-	`)
+	AsciiPoster()
 	if IntRtRatings == -1 && len(ImdbRatings.Title) == 0 {
 		fmt.Println("The Movie Does not seem to exist!")
 		fmt.Println("Tip: If you are using spaces in your film name, enclose the movie name in double quotes!")
@@ -73,4 +76,17 @@ func PrettyPrinter(MovieName string, year string) {
 			fmt.Println(chalk.Green, chalk.Underline.TextStyle("Rotten Tomatoes Rating: "+RtRating+"% (Rotten!)"))
 		}
 	}
+}
+
+func AsciiPoster() {
+	fmt.Println(chalk.Cyan, `
+------------------------------------------------------
+  __  __            _         _____                    
+ |  \/  |          (_)       / ____|                   
+ | \  / | _____   ___  ___  | (___   ___ ___  _ __ ___ 
+ | |\/| |/ _ \ \ / / |/ _ \  \___ \ / __/ _ \| '__/ _ \
+ | |  | | (_) \ V /| |  __/  ____) | (_| (_) | | |  __/
+ |_|  |_|\___/ \_/ |_|\___| |_____/ \___\___/|_|  \___|
+------------------------------------------------------
+	`)
 }
