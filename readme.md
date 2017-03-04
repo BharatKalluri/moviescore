@@ -84,7 +84,7 @@ The Dark Knight is probably the smartest and most stylish action movie since the
  ------------------- 
 An exceptionally smart, brooding picture with some terrific performances.
  ------------------- 
-and many more(shortend for readme)........
+and many more(shortened for readme)........
 ```
 For some A year argument is required. For example searching for arrival, rotten tomatoes rating will not be shown and reviews will not work. In that case
 ```bash
