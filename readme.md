@@ -1,9 +1,3 @@
 # MovieScore
 
-### Features to be added
-
-
-
-### Work To Be Done
-
-+ Rotten tomatoes add year to get better results
+A Cli utility written in go language to get movie ratings , Trailer Links and reviews from the internet. Right into your Terminal!
