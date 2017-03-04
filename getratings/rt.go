@@ -37,9 +37,14 @@ func RtReviewScraper(mname string, year string) {
 	if err != nil {
 		fmt.Println("error Occured!")
 	}
-	doc.Find("#reviews .review_quote").Each(func(i int, s *goquery.Selection) {
-		review := s.Find("p").Text()
-		fmt.Println(strings.TrimSpace(review))
-		fmt.Println(chalk.Magenta, "-------------------", chalk.Reset)
-	})
+	finder := doc.Find("#reviews .review_quote")
+	if len(finder.Nodes) > 0 {
+		doc.Find("#reviews .review_quote").Each(func(i int, s *goquery.Selection) {
+			review := s.Find("p").Text()
+			fmt.Println(strings.TrimSpace(review))
+			fmt.Println(chalk.Magenta, "-------------------", chalk.Reset)
+		})
+	} else {
+		fmt.Println("Looks like Rt also needs the year argument!")
+	}
 }

@@ -40,7 +40,6 @@ func main() {
 			getratings.PrettyPrinter(c.Args().Get(0), "")
 		}
 		fmt.Println(c.String("reviews"))
-		getratings.RtReviewScraper(c.String("reviews"), "")
 		return nil
 	}
 	app.Run(os.Args)
