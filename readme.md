@@ -1,5 +1,8 @@
 # MovieScore
 
+## Show me what it does!
+[![asciicast](https://asciinema.org/a/1ms6yrsd8tryotybmpnm5vsaj.png)](https://asciinema.org/a/1ms6yrsd8tryotybmpnm5vsaj)
+
 ## What Does It Do?
 
 A Cli utility written in go language to get movie ratings , Trailer Links and reviews from the internet. Right into your Terminal!
