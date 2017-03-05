@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-//The struture for parsing the json from omdbapi
+//ImdbMovie struture for parsing the json from omdbapi
 type ImdbMovie struct {
 	Title      string
 	Year       string
@@ -20,7 +20,7 @@ type ImdbMovie struct {
 	ImdbRating string `json:"imdbRating"`
 }
 
-//This function takes the moviename as argument and returns the json result from the omdbapi
+//GetImdbRatings function takes the moviename as argument and returns the json result from the omdbapi
 func GetImdbRatings(mname string) ImdbMovie {
 	movieName := strings.Replace(mname, " ", "+", 9)
 	movieInfo := new(ImdbMovie)

@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-//This function takes the movie name and year(an optional argument) as arguments and returns the rating from rt
+//RtScraper function takes the movie name and year(an optional argument) as arguments and returns the rating from rt
 func RtScraper(mname string, year string) string {
 	movieName := strings.Replace(mname, " ", "_", 9)
 	urlis := "https://www.rottentomatoes.com/m/" + movieName
@@ -28,7 +28,7 @@ func RtScraper(mname string, year string) string {
 	}
 }
 
-//This function also takes in movieName and year(an optional argument) as arguments prints all the reviews
+//RtReviewScraper function also takes in movieName and year(an optional argument) as arguments prints all the reviews
 func RtReviewScraper(mname string, year string) {
 	movieName := strings.Replace(mname, " ", "_", 9)
 	urlis := "https://www.rottentomatoes.com/m/" + movieName
