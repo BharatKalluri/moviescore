@@ -1,5 +1,10 @@
 # MovieScore
 
+[![MIT Licence](https://badges.frapsoft.com/os/mit/mit.svg?v=103)](https://opensource.org/licenses/mit-license.php)
+[![Open Source Love](https://badges.frapsoft.com/os/v3/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![Go Reportcard](https://goreportcard.com/badge/github.com/bharatkalluri/moviescore)]https://goreportcard.com/report/github.com/bharatkalluri/moviescore
+[![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+
 ## Show me what it does!
 [![asciicast](https://asciinema.org/a/1ms6yrsd8tryotybmpnm5vsaj.png)](https://asciinema.org/a/1ms6yrsd8tryotybmpnm5vsaj)
 
