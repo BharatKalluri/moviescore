@@ -1,0 +1,21 @@
+name: moviescore
+version: '0.0'
+summary: A cli tool to get movie ratings and reviews directly to your terminal!
+description: |
+  A Cli utility written in go language to get movie ratings , Trailer Links
+  and reviews from the internet. Right into your Terminal!
+
+grade: stable
+confinement: strict
+
+apps:
+  moviescore:
+    command: MovieScore
+    plugs: [network]
+
+parts:
+  moviescore:
+    plugin: go
+    source: https://github.com/popey/MovieScore.git
+    source-type: git
+    go-importpath: github.com/popey/MovieScore
