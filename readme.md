@@ -112,3 +112,6 @@ If you don't have go installed on your system , Then download the moviescore fil
 
 ### Have any ideas?
 Feel free to contact me at kalluribharat@gmail.com
+
+###### Note
+All the information belongs to the respective owners. The information is just being scraped from the publicly available web pages.

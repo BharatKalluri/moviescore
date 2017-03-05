@@ -11,6 +11,7 @@ import (
 
 var myClient = &http.Client{Timeout: 10 * time.Second}
 
+//The Print function which prints all the information from all the modules
 func PrettyPrinter(MovieName string, year string) {
 	RtRating := RtScraper(MovieName, year)
 	ImdbRatings := GetImdbRatings(MovieName)
@@ -44,6 +45,7 @@ func PrettyPrinter(MovieName string, year string) {
 	}
 }
 
+//ASCII POSTER!!
 func AsciiPoster() {
 	fmt.Println(chalk.Cyan, `
 ------------------------------------------------------
@@ -57,6 +59,7 @@ func AsciiPoster() {
 	`)
 }
 
+//Function which takes the url and the target as arguments for parsing json
 func GetJSON(url string, target interface{}) error {
 	r, err := myClient.Get(url)
 	if err != nil {

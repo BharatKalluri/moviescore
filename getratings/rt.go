@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+//This function takes the movie name and year(an optional argument) as arguments and returns the rating from rt
 func RtScraper(mname string, year string) string {
 	movieName := strings.Replace(mname, " ", "_", 9)
 	urlis := "https://www.rottentomatoes.com/m/" + movieName
@@ -15,7 +16,7 @@ func RtScraper(mname string, year string) string {
 	}
 	doc, err := goquery.NewDocument(urlis)
 	if err != nil {
-		fmt.Println("error occured")
+		fmt.Println("Error occurred")
 	}
 	rating := doc.Find(".meter-value.superPageFontColor span").Text()
 	if len(rating) == 0 {
@@ -27,6 +28,7 @@ func RtScraper(mname string, year string) string {
 	}
 }
 
+//This function also takes in movieName and year(an optional argument) as arguments prints all the reviews
 func RtReviewScraper(mname string, year string) {
 	movieName := strings.Replace(mname, " ", "_", 9)
 	urlis := "https://www.rottentomatoes.com/m/" + movieName
@@ -35,7 +37,7 @@ func RtReviewScraper(mname string, year string) {
 	}
 	doc, err := goquery.NewDocument(urlis)
 	if err != nil {
-		fmt.Println("error Occured!")
+		fmt.Println("error Occurred!")
 	}
 	finder := doc.Find("#reviews .review_quote")
 	if len(finder.Nodes) > 0 {
