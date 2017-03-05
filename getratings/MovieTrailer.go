@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/antonholmquist/jason"
 	"net/http"
+	"strings"
 )
 
 //GetTrailer takes in a movie name as argument and searches youtube for "<movie name> movie trailer"
