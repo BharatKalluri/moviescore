@@ -105,7 +105,7 @@ will work!
 If you have go language on your system, then
 ```bash
 go get github.com/bharatkalluri/moviescore
-cd $GOPATH/src/bharatkalluri/moviescore
+cd $GOPATH/src/github.com/bharatkalluri/moviescore
 go install
 ```
 and you are good to go!
