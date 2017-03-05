@@ -19,7 +19,7 @@ func GetTrailer(mname string) string {
 	}
 	v, err := jason.NewObjectFromReader(res.Body)
 	if err != nil {
-		fmt.Println("An error occured!")
+		fmt.Println("An error occurred!")
 	}
 	ItemsArr, _ := v.GetObjectArray("items")
 	for _, item := range ItemsArr {
