@@ -29,6 +29,6 @@ func GetTrailer(mname string) string {
 		LogError(err)
 		AllVideoArray = append(AllVideoArray, Vid)
 	}
-	movieTrailerUrl := "https://www.youtube.com/embed/" + AllVideoArray[0]
-	return movieTrailerUrl
+	movieTrailerURL := "https://www.youtube.com/embed/" + AllVideoArray[0]
+	return movieTrailerURL
 }
