@@ -26,7 +26,7 @@ func main() {
 	}
 	app.Action = func(c *cli.Context) error {
 		if c.String("reviews") != "" {
-			getratings.AsciiPoster()
+			getratings.ASCIIPoster()
 			fmt.Println(chalk.Green, "Reviews from rt", chalk.Reset)
 			fmt.Println(chalk.Magenta, "-------------------", chalk.Reset)
 			getratings.RtReviewScraper(c.String("reviews"), c.String("year"))

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/ttacon/chalk"
+	"log"
 	"net/http"
 	"strconv"
 	"time"
@@ -16,7 +17,7 @@ func PrettyPrinter(MovieName string, year string) {
 	RtRating := RtScraper(MovieName, year)
 	ImdbRatings := GetImdbRatings(MovieName)
 	IntRtRatings, err := strconv.Atoi(RtRating)
-	AsciiPoster()
+	ASCIIPoster()
 	if IntRtRatings == -1 && len(ImdbRatings.Title) == 0 {
 		fmt.Println("The Movie Does not seem to exist!")
 		fmt.Println("Tip: If you are using spaces in your film name, enclose the movie name in double quotes!")
@@ -45,8 +46,8 @@ func PrettyPrinter(MovieName string, year string) {
 	}
 }
 
-//AsciiPoster generates the ASCII POSTER!!
-func AsciiPoster() {
+//ASCIIPoster generates the ASCII POSTER!!
+func ASCIIPoster() {
 	fmt.Println(chalk.Cyan, `
 ------------------------------------------------------
   __  __            _         _____                    
@@ -67,4 +68,10 @@ func GetJSON(url string, target interface{}) error {
 	}
 	defer r.Body.Close()
 	return json.NewDecoder(r.Body).Decode(target)
+}
+
+func LogError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
 }

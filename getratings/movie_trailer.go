@@ -23,10 +23,12 @@ func GetTrailer(mname string) string {
 	}
 	ItemsArr, _ := v.GetObjectArray("items")
 	for _, item := range ItemsArr {
-		id, _ := item.GetObject("id")
-		Vid, _ := id.GetString("videoId")
+		id, err := item.GetObject("id")
+		LogError(err)
+		Vid, err := id.GetString("videoId")
+		LogError(err)
 		AllVideoArray = append(AllVideoArray, Vid)
 	}
-	MovieTrailerUrl := "https://www.youtube.com/embed/" + AllVideoArray[0]
-	return MovieTrailerUrl
+	movieTrailerUrl := "https://www.youtube.com/embed/" + AllVideoArray[0]
+	return movieTrailerUrl
 }
