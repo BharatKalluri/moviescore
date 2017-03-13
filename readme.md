@@ -170,10 +170,6 @@ go install
 ```
 and you are good to go!
 
-If you don't have go installed on your system , Then download the moviescore file from dist folder and place it in a convenient folder, then it can be used from there..
-```bash
-./moviescore inception
-```
 
 ### Have any ideas?
 Feel free to contact me at kalluribharat@gmail.com
