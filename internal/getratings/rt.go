@@ -41,6 +41,7 @@ func RtReviewScraper(mname string, year string) {
 	}
 	finder := doc.Find("#reviews .review_quote")
 	if len(finder.Nodes) > 0 {
+		fmt.Println(chalk.Magenta.NewStyle().WithTextStyle(chalk.Bold), "Reviews from RT!", chalk.Reset)
 		doc.Find("#reviews .review_quote").Each(func(i int, s *goquery.Selection) {
 			review := s.Find("p").Text()
 			fmt.Println(strings.TrimSpace(review))

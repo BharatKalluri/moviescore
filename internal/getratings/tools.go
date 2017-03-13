@@ -17,7 +17,6 @@ func PrettyPrinter(MovieName string, year string) {
 	RtRating := RtScraper(MovieName, year)
 	ImdbRatings := GetImdbRatings(MovieName)
 	IntRtRatings, err := strconv.Atoi(RtRating)
-	ASCIIPoster()
 	if IntRtRatings == -1 && len(ImdbRatings.Title) == 0 {
 		fmt.Println("The Movie Does not seem to exist!")
 		fmt.Println("Tip: If you are using spaces in your film name, enclose the movie name in double quotes!")
