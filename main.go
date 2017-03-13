@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/bharatkalluri/MovieScore/internal/getratings"
+	"github.com/bharatkalluri/moviescore/internal/getratings"
 	"github.com/ttacon/chalk"
 	"github.com/urfave/cli"
 	"os"
@@ -10,7 +10,7 @@ import (
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "MovieScore"
+	app.Name = "moviescore"
 	app.Usage = "A cli utility for showing Movie Ratings!"
 	app.UsageText = "MovieScore <Movie name here> (Please have quotes on either side if the movie name has spaces)"
 	app.Version = "0.1"
