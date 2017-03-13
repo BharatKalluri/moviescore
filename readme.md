@@ -104,17 +104,17 @@ For Parental Guide
 moviescore -pg inception
 ```
 will result
-```bash
+```
 ------------------------------------------------------
-  __  __            _         _____                    
- |  \/  |          (_)       / ____|                   
- | \  / | _____   ___  ___  | (___   ___ ___  _ __ ___
- | |\/| |/ _ \ \ / / |/ _ \  \___ \ / __/ _ \| '__/ _ \
- | |  | | (_) \ V /| |  __/  ____) | (_| (_) | | |  __/
- |_|  |_|\___/ \_/ |_|\___| |_____/ \___\___/|_|  \___|
+__  __            _         _____                    
+|  \/  |          (_)       / ____|                   
+| \  / | _____   ___  ___  | (___   ___ ___  _ __ ___
+| |\/| |/ _ \ \ / / |/ _ \  \___ \ / __/ _ \| '__/ _ \
+| |  | | (_) \ V /| |  __/  ____) | (_| (_) | | |  __/
+|_|  |_|\___/ \_/ |_|\___| |_____/ \___\___/|_|  \___|
 ------------------------------------------------------
 
- Parental Guide:
+Parental Guide:
 Reference Url:  http://www.imdb.com/title/tt1375666/parentalguide
 Sex and Nudity 
   No sex or nudity is shown.Cobb and Saito first meet in a "love nest" where Saito frequently meets his lover - a relationship he's
@@ -127,7 +127,7 @@ Violence And Gore
   subconscious. As a result, the "real" body count is surprisingly low (at least for a film that wields this much intensity), while
   metaphysical fatalities run off the chart.Merging both categories, people are punched, kicked, choked, shot (scores of times),
   stabbed, hit by cars (several times), blown up, attacked by rampaging mobs, almost buried by avalanches and nearly drowned. Somebody
-   gets shot in the foot just to illustrate that, while dying in a dream state is difficult, pain is all too easy to come
+  gets shot in the foot just to illustrate that, while dying in a dream state is difficult, pain is all too easy to come
   by.The visceral feel of the violence is about what you'd expect for a PG-13 movie and, frankly, maybe a step back from a
   prime-time actioner on television. The mayhem is practically bloodless, and it's perpetrated with a certain, almost chilly,
   remove.When someone wants to exit a dream, they simply "kill" themselves or have someone do it for them. Cobb, for instance,
@@ -135,14 +135,14 @@ Violence And Gore
   sensation of falling can jar someone awake, folks routinely engineer the end of their dreams by plummeting off bridges,
   jumping out of tall buildings or cutting loose elevator cables. One character throws another off a cliff.A scene is shown
   several times where a man and woman are lying on a train track with the intention of committing suicide.
- Profanity
+Profanity
   8 uses of hell, 4 uses of god damn it , 2 uses of Jesus Christ, 2 uses of asshole , 2 uses of damn, 2 uses of bloody,2 uses of for
-   god's sake,2 uses of Jesus, 1 use of bastards, 1 use of god damn.
+  god's sake,2 uses of Jesus, 1 use of bastards, 1 use of god damn.
 Alcohol/Drugs/Smoking
   People drink wine and beer. Intravenous drug sedatives and other mysterious concoctions are required to put people into these dreamlike
   states.A character has lost his ability to dream normally, and so he repeatedly hooks himself up to delve into his own haunting dream
   world.
- Frightening/Intense Scenes
+Frightening/Intense Scenes
   This film has an intense atmosphere throughout. The second half of the film is especially intense.In a dream, people hold a woman
   while another woman walks up and stabs her. She wakes up before you can see any harm done. This scene is unexpected and can frighten
   some.A woman shoots a man's leg to torture him.A train unexpectedly crashes into a car with people in it.A street starts
