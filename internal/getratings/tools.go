@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -32,7 +33,6 @@ func PrettyPrinter(MovieName string, year string) {
 		fmt.Println(chalk.Magenta, "Metascore Rated: "+ImdbRatings.Metascore)
 		fmt.Println(chalk.Magenta, "Awards: "+ImdbRatings.Awards)
 		fmt.Println(chalk.Magenta, "Plot: "+ImdbRatings.Plot)
-		fmt.Println(chalk.Green, "Movie Trailer: "+GetTrailer(MovieName))
 		fmt.Println(" Ratings from IMDB and Rotten Tomatoes---")
 		fmt.Println(chalk.Magenta, chalk.Underline.TextStyle("IMDB Rating: "+ImdbRatings.ImdbRating))
 		if IntRtRatings == -1 && err == nil {
@@ -61,6 +61,10 @@ func ASCIIPoster() {
 
 //GetJSON Function which takes the url and the target as arguments for parsing json
 func GetJSON(url string, target interface{}) error {
+	if strings.Contains(url, "omdb") {
+		// This is a free key, and throttled to 10000 req per day
+		url = url + "&apikey=e389610c"
+	}
 	r, err := myClient.Get(url)
 	if err != nil {
 		return err

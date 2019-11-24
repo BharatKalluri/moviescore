@@ -18,7 +18,7 @@ func RtScraper(mname string, year string) string {
 	if err != nil {
 		fmt.Println("Error occurred")
 	}
-	rating := doc.Find(".meter-value.superPageFontColor span").Text()
+	rating := strings.TrimSpace(doc.Find("#tomato_meter_link > span:nth-child(2)").Text())
 	if len(rating) == 0 {
 		return "-1"
 	} else if len(rating) > 4 {
